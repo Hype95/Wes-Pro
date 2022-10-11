@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>Clark Ashton Smith</title>
+
+    <style>  .main {
+        /* Fill the available space */
+        height: 100vh;
+        
+        /* Make the children of the element closer to the viewport */
+        perspective: 2px;
+        
+        /* Hide the overflow */
+        overflow-x: hidden;
+      }
+      
+      /* General styling, not necessarily related to parallax effect  */
+      .section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      
+      /* Different background colors for demo purpose */
+      .static-one {
+        background-color: #feceab;
+      }
+      
+      .static-two {
+        background-color: #aacfcf;
+      }
+      
+      .static-three {
+        background-color: #c06c84;
+      }
+      
+      .parallax::after {
+        /* Position the pseudo-element to fill the parent */
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        
+        /* Scale the image to full */
+        background-size: cover;
+        
+        /* Move the element back then scale the element, it helps to appears more slowly */
+        transform: translateZ(-1px) scale(1.7);
+        
+        /* Set the parallax section before the other elements. */
+        z-index: -1;
+      }
+      
+      /* Different background images */
+      .parallax-one::after {
+        background-image: url(https://source.unsplash.com/vs6a4EHj_Ro/1600x900);
+      }
+      
+      .parallax-two::after {
+        background-image: url(https://source.unsplash.com/P86-JPbDnPY/1600x900);
+      }   </style>
+  </head>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Hidden brand</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+  <main class="main">
+    <section class="section static static-one">Static</section>
+    <section class="section parallax parallax-one"></section>
+    <section class="section static static-two">Static</section>
+    <section class="section parallax parallax-two"></section>
+    <section class="section static static-three">Static</section>
+  </main>
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
